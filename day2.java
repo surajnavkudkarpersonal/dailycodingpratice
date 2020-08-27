@@ -34,4 +34,23 @@ class Day2 {
 
         return productArray;
     }
+
+    public int[] productExceptSelfWithoutDivision(int[] nums) {
+        int length = nums.length;
+        int[] productArray = new int[length];
+
+        productArray[0] = 1;
+        for (int i = 1; i < length; i++) {
+            productArray[i] = nums[i - 1] * productArray[i - 1];
+        }
+
+        int rightProduct = 1;
+
+        for (int i = length - 1; i >= 0; i--) {
+            productArray[i] *= rightProduct;
+            rightProduct *= nums[i];
+        }
+
+        return productArray;
+    }
 }
