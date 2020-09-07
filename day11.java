@@ -52,6 +52,9 @@ class Day11 {
 
 			for(int j=0;j<MAX_ROW;j++){
 
+
+				
+
 				int rightTop = (j==0||i==MAX_COL-1)?0:gold[j-1][i+1]; 
 				int right = (i==MAX_COL-1)?0:gold[j][i+1]; 
 				int rightBottom = (j==MAX_ROW-1||i==MAX_COL-1)?0:gold[j+1][i+1]; 
